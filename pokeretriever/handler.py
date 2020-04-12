@@ -264,9 +264,11 @@ class OutputHandler(BaseHandler):
                 return poke_object
             else:
                 try:
-                    outfile = open(req.output, 'wb')
-                    pickle.dump(str(poke_object), outfile)
-                    print(str(poke_object))
+                    # outfile = open(req.output, 'wb')
+                    # pickle.dump(str(poke_object), outfile)
+                    with open(req.output, 'w', -1, "utf-8") as file:
+                        for line in (str(poke_object).split('\n')):
+                            file.write(line + "\n")
                     return f"\nmode:{req.mode} / id:{req.input_data} is Written to {req.output}\n"
 
                 except FileNotFoundError:
