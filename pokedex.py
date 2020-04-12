@@ -16,9 +16,11 @@ class PokedexFacade:
 
 async def main(req: Request):
     aiohttp = PokedexFacade()
-    result = await aiohttp.execute_request(req)
-    print(result)
-    print(req)
+    try:
+        result = await aiohttp.execute_request(req)
+        print(result)
+    except TypeError:
+        print("Could not process request.")
 
 
 if __name__ == '__main__':

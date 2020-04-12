@@ -1,5 +1,5 @@
 pikachu
-Raichu
-132
-Alakhazam
-pidgey
+bulb
+123
+tako
+raichu

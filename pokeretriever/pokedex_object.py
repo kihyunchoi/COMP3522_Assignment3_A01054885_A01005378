@@ -44,7 +44,7 @@ class Pokemon(PokedexObject):
         for a in self.abilities:
             abilities += "\n" + a.__str__() + "-" * 30
 
-        str = "Name: {}\nPokedex ID: {}\nHeight: {}\nWeight: {}\nTypes: {}\n".format(self.name, self.get_id(),
+        str = "Pokemon Name: {}\nPokedex ID: {}\nHeight: {}\nWeight: {}\nTypes: {}\n".format(self.name, self.get_id(),
                                                                                      self.height, self.weight, self.types)
         str += "-" * 30 + "\n\tStats\n" + "-" * 30 + "\n{}".format(stats)
         str += "\n" + "-" * 30 + "\n\tAbilities\n" + "-" * 30 + "\n{}".format(abilities)

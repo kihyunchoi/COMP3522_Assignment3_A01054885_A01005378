@@ -22,7 +22,11 @@ async def get_pokemon_data(mode: str, id_: int, url: str, session: aiohttp.Clien
     # print("Response object from aiohttp:\n", response)
     # print("Response object type:\n", type(response))
     # print("-----")
-    json_dict = await response.json()
+    json_dict = None
+    if response.status == 200:
+        json_dict = await response.json()
+    else:
+        print(f"{id_} is not a valid input.")
     return json_dict
 
 
