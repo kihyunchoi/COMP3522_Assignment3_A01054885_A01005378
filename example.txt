@@ -1,0 +1,237 @@
+Name: ivysaur
+Pokedex ID: 2
+Height: 10
+Weight: 130
+Types: ['poison', 'grass']
+------------------------------
+	Stats
+------------------------------
+
+Stat Name: speed
+Base Stat: 60
+------------------------------
+Stat Name: special-defense
+Base Stat: 80
+------------------------------
+Stat Name: special-attack
+Base Stat: 80
+------------------------------
+Stat Name: defense
+Base Stat: 63
+------------------------------
+Stat Name: attack
+Base Stat: 62
+------------------------------
+Stat Name: hp
+Base Stat: 60
+------------------------------
+------------------------------
+	Abilities
+------------------------------
+
+Ability Name: chlorophyll
+------------------------------
+Ability Name: overgrow
+------------------------------
+------------------------------
+	Moves
+------------------------------
+
+Move Name: swords-dance
+Level Acquired: 0
+------------------------------
+Move Name: cut
+Level Acquired: 0
+------------------------------
+Move Name: bind
+Level Acquired: 0
+------------------------------
+Move Name: vine-whip
+Level Acquired: 9
+------------------------------
+Move Name: headbutt
+Level Acquired: 0
+------------------------------
+Move Name: tackle
+Level Acquired: 1
+------------------------------
+Move Name: body-slam
+Level Acquired: 0
+------------------------------
+Move Name: take-down
+Level Acquired: 15
+------------------------------
+Move Name: double-edge
+Level Acquired: 31
+------------------------------
+Move Name: growl
+Level Acquired: 3
+------------------------------
+Move Name: strength
+Level Acquired: 0
+------------------------------
+Move Name: mega-drain
+Level Acquired: 0
+------------------------------
+Move Name: leech-seed
+Level Acquired: 7
+------------------------------
+Move Name: growth
+Level Acquired: 28
+------------------------------
+Move Name: razor-leaf
+Level Acquired: 20
+------------------------------
+Move Name: solar-beam
+Level Acquired: 0
+------------------------------
+Move Name: poison-powder
+Level Acquired: 13
+------------------------------
+Move Name: sleep-powder
+Level Acquired: 13
+------------------------------
+Move Name: string-shot
+Level Acquired: 0
+------------------------------
+Move Name: toxic
+Level Acquired: 0
+------------------------------
+Move Name: rage
+Level Acquired: 0
+------------------------------
+Move Name: mimic
+Level Acquired: 0
+------------------------------
+Move Name: double-team
+Level Acquired: 0
+------------------------------
+Move Name: defense-curl
+Level Acquired: 0
+------------------------------
+Move Name: light-screen
+Level Acquired: 0
+------------------------------
+Move Name: reflect
+Level Acquired: 0
+------------------------------
+Move Name: bide
+Level Acquired: 0
+------------------------------
+Move Name: flash
+Level Acquired: 0
+------------------------------
+Move Name: rest
+Level Acquired: 0
+------------------------------
+Move Name: substitute
+Level Acquired: 0
+------------------------------
+Move Name: snore
+Level Acquired: 0
+------------------------------
+Move Name: curse
+Level Acquired: 0
+------------------------------
+Move Name: protect
+Level Acquired: 0
+------------------------------
+Move Name: sludge-bomb
+Level Acquired: 0
+------------------------------
+Move Name: mud-slap
+Level Acquired: 0
+------------------------------
+Move Name: giga-drain
+Level Acquired: 0
+------------------------------
+Move Name: endure
+Level Acquired: 0
+------------------------------
+Move Name: swagger
+Level Acquired: 0
+------------------------------
+Move Name: fury-cutter
+Level Acquired: 0
+------------------------------
+Move Name: attract
+Level Acquired: 0
+------------------------------
+Move Name: sleep-talk
+Level Acquired: 0
+------------------------------
+Move Name: return
+Level Acquired: 0
+------------------------------
+Move Name: frustration
+Level Acquired: 0
+------------------------------
+Move Name: safeguard
+Level Acquired: 0
+------------------------------
+Move Name: sweet-scent
+Level Acquired: 23
+------------------------------
+Move Name: synthesis
+Level Acquired: 39
+------------------------------
+Move Name: hidden-power
+Level Acquired: 0
+------------------------------
+Move Name: sunny-day
+Level Acquired: 0
+------------------------------
+Move Name: rock-smash
+Level Acquired: 0
+------------------------------
+Move Name: facade
+Level Acquired: 0
+------------------------------
+Move Name: nature-power
+Level Acquired: 0
+------------------------------
+Move Name: knock-off
+Level Acquired: 0
+------------------------------
+Move Name: secret-power
+Level Acquired: 0
+------------------------------
+Move Name: bullet-seed
+Level Acquired: 0
+------------------------------
+Move Name: natural-gift
+Level Acquired: 0
+------------------------------
+Move Name: worry-seed
+Level Acquired: 36
+------------------------------
+Move Name: seed-bomb
+Level Acquired: 0
+------------------------------
+Move Name: energy-ball
+Level Acquired: 0
+------------------------------
+Move Name: captivate
+Level Acquired: 0
+------------------------------
+Move Name: grass-knot
+Level Acquired: 0
+------------------------------
+Move Name: venoshock
+Level Acquired: 0
+------------------------------
+Move Name: round
+Level Acquired: 0
+------------------------------
+Move Name: echoed-voice
+Level Acquired: 0
+------------------------------
+Move Name: grass-pledge
+Level Acquired: 0
+------------------------------
+Move Name: work-up
+Level Acquired: 0
+------------------------------
+Move Name: confide
+Level Acquired: 0
+------------------------------
