@@ -170,15 +170,14 @@ class OutputHandler(BaseHandler):
                 to_file.close()
                 return f"{req.input_file} is Written to {req.output}"
         elif req.input_data is not None:
-            from_data = req
             if req.output == "print":
                 return poke_object
             else:
-                to_file = open(req.output, "wb")
-                result = from_data
-                to_file.write(result)
-                to_file.close()
-                return f"{req.input_data} is Written to {req.output}"
+                with open(req.output, "w") as file:
+                    for line in (str(poke_object).split("\n")):
+                        file.write(line + "\n")
+                    file.close()
+                return f"\n{req.input_data} is Written to {req.output}\n"
         else:
             return ErrorHandler.handle_error("Output cannot be provided. "
                                              "No input file or input data")
