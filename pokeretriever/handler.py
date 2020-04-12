@@ -264,7 +264,7 @@ class OutputHandler(BaseHandler):
                 return poke_object
             else:
                 try:
-                    outfile = codecs.open(req.output, 'wb')
+                    outfile = open(req.output, 'wb')
                     pickle.dump(poke_object.__str__, outfile)
                     outfile.close()
                     return f"\nmode:{req.mode} / id:{req.input_data} is Written to {req.output}\n"
