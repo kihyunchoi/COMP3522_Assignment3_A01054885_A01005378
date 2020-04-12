@@ -36,9 +36,8 @@ async def process_single_request(mode, id_) -> dict:
     """
     url = "https://pokeapi.co/api/v2/{}/{}/"
     async with aiohttp.ClientSession() as session:
-        print("***process_single_request")
         response = await get_pokemon_data(mode, id_, url, session)
-        print(response)
+        # print(response)
         return response
 
 
@@ -52,14 +51,10 @@ async def process_requests(mode: str, requests: list) -> list:
     """
     url = "https://pokeapi.co/api/v2/{}/{}/"
     async with aiohttp.ClientSession() as session:
-        print("***process_requests")
         async_coroutines = [get_pokemon_data(mode, id_, url, session)
                             for id_ in requests]
 
         responses = await asyncio.gather(*async_coroutines)
-
-        for response in responses:
-            print(response)
         return responses
 
 

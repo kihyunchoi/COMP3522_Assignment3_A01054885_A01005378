@@ -36,7 +36,7 @@ def setup_request_commandline() -> Request:
     group.add_argument("-d", "--inputdata",
                        help="A group of mutually exclusive argument "
                             "This takes a name(string) or an id(int)")
-    parser.add_argument("-ex", "--expanded",
+    parser.add_argument("-ex", "--expanded", action='store_true',
                         help="An optional flag. This supports only pokemon queries. "
                              "This provides more information "
                              "(stats | abilities | moves)")
@@ -48,7 +48,7 @@ def setup_request_commandline() -> Request:
         args = parser.parse_args()
         req = Request()
         req.mode = args.mode
-        req.input_file = args.file
+        req.input_file = args.inputfile
         req.input_data = args.inputdata
         req.expanded = args.expanded
         req.output = args.output
