@@ -18,7 +18,8 @@ async def main(req: Request):
     aiohttp = PokedexFacade()
     try:
         result = await aiohttp.execute_request(req)
-        print(result)
+        for i in result:
+            print(i)
     except TypeError:
         print("Could not process request.")
 
