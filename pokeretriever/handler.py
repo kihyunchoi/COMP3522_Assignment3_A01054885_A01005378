@@ -265,12 +265,12 @@ class OutputHandler(BaseHandler):
             else:
                 try:
                     outfile = open(req.output, 'wb')
-                    pickle.dump(poke_object.__str__, outfile)
-                    outfile.close()
+                    pickle.dump(str(poke_object), outfile)
+                    print(str(poke_object))
                     return f"\nmode:{req.mode} / id:{req.input_data} is Written to {req.output}\n"
 
-                except ErrorHandler:
-                    return handle_error(f"{req.input_data} could not written to {req.output}")
+                except FileNotFoundError:
+                    return f"{req.input_data} could not written to {req.output}"
         else:
             return ErrorHandler.handle_error("Output cannot be provided. "
                                              "No input file or input data")
