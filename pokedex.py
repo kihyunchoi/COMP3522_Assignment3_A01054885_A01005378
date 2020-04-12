@@ -1,17 +1,5 @@
-import des
-import argparse
-import abc
-import enum
-
-
-# class Expanded(enum.Enum):
-#     # Stats
-#     STATS = "stats"
-#     # Abilities
-#     ABILITIES = "abilities"
-#     # Moves
-#     MOVES = "moves"
 from pokeretriever.handler import ModeHandler
+from pokeretriever.pokedex_object import PokedexObject
 from pokeretriever.request import Request, setup_request_commandline
 
 
@@ -20,7 +8,7 @@ class PokedexFacade:
     def __init__(self):
         self.start_handler = ModeHandler()
 
-    def execute_request(self, req: Request):
+    def execute_request(self, req: Request) -> PokedexObject:
         result = self.start_handler.handle_request(req)
         print(result)
 
