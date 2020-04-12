@@ -3,9 +3,6 @@ from pokeretriever import request, aiohttp, pokedex_object
 import io
 import json
 import pickle
-import codecs
-import cPickle
-
 
 class BaseHandler(abc.ABC):
 
@@ -268,7 +265,7 @@ class OutputHandler(BaseHandler):
             else:
                 try:
                     outfile = codecs.open(req.output, 'wb')
-                    cPickle.dump(poke_object.__str__, outfile)
+                    pickle.dump(poke_object.__str__, outfile)
                     outfile.close()
                     return f"\nmode:{req.mode} / id:{req.input_data} is Written to {req.output}\n"
 
