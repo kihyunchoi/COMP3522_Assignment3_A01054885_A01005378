@@ -100,22 +100,22 @@ async def process_requests_tasks(mode: str, requests: list) -> list:
         return responses
 
 
-def main():
-
-    loop = asyncio.get_event_loop()
-
-    # response = loop.run_until_complete(process_single_request("pokemon", 1))
-    # response2 = loop.run_until_complete(process_single_request("ability", 2))
-    # response3 = loop.run_until_complete(process_single_request_task("type", 3))
-    requests = [1, 2, 3, 4, 5]
-    responses = loop.run_until_complete(process_requests("pokemon", requests))
-    responses1 = loop.run_until_complete(process_requests("ability", requests))
-    responses2 = loop.run_until_complete(process_requests_tasks("move", requests))
-    print()
-    response = loop.run_until_complete(process_single_request("pokemon", 1))
-    response2 = loop.run_until_complete(process_single_request("ability", 2))
-    response3 = loop.run_until_complete(process_single_request_task("type", 3))
-
-
-if __name__ == '__main__':
-    main()
+# def main():
+#
+#     loop = asyncio.get_event_loop()
+#
+#     # response = loop.run_until_complete(process_single_request("pokemon", 1))
+#     # response2 = loop.run_until_complete(process_single_request("ability", 2))
+#     # response3 = loop.run_until_complete(process_single_request_task("type", 3))
+#     requests = [1, 2, 3, 4, 5]
+#     responses = loop.run_until_complete(process_requests("pokemon", requests))
+#     responses1 = loop.run_until_complete(process_requests("ability", requests))
+#     responses2 = loop.run_until_complete(process_requests_tasks("move", requests))
+#     print()
+#     response = loop.run_until_complete(process_single_request("pokemon", 1))
+#     response2 = loop.run_until_complete(process_single_request("ability", 2))
+#     response3 = loop.run_until_complete(process_single_request_task("type", 3))
+#
+#
+# if __name__ == '__main__':
+#     main()
