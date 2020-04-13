@@ -179,7 +179,6 @@ class OutputHandler(BaseHandler):
         return pokemon_objects
 
     async def handle_request(self, req: request.Request):
-        print("Handling Output")
         try:
             poke_objects = await OutputHandler.create_objects(req)
             if req.output == "print":
@@ -192,4 +191,4 @@ class OutputHandler(BaseHandler):
                 return [f"Results written to {req.output}"]
         except TypeError:
             return ErrorHandler.handle_error("Output cannot be provided. "
-                                             "No input file or input data")
+                                             "No valid input file or input data")
