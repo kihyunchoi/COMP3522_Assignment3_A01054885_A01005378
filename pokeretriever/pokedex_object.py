@@ -49,7 +49,7 @@ class Pokemon(PokedexObject):
         stri = '+-' + '-' * width + '-+'
         stri += '\n| {0:^{1}} |'.format("Pokemon Details", width)
         stri += '\n+-' + '-' * width + '-+'
-        type_str = ",".join(self.types)
+        type_str = ", ".join(self.types)
         poke_str = "\n{:<15} {:<20}".format("Pokemon Name:", self.name)
         poke_str += "\n{:<15} {:<20}".format("Pokedex ID:", self.get_id())
         height = str(self.height) + " decimetres"
@@ -84,7 +84,7 @@ class Pokemon(PokedexObject):
         # Formatting Moves
         stri += '\n+-' + '-' * width + '-+'
         stri += '\n| {0:^{1}} |'.format("Moves", width)
-        stri += moves
+        stri += moves + "\n\n"
 
         return stri
 
@@ -191,6 +191,7 @@ class Stat(PokedexObject):
         if self.battle_only is None:
             str += "Stat Name: {}\nBase Stat: {}\n".format(self.name, self.base_stat)
         else:
-            str += "Stat Name: {}\nStat ID: {}\nBattle Only: {}\n".format(self.name, self._id, self.battle_only)
+            str += "Stat Name: {}\nStat ID: {}\nBattle Only: {}\n" \
+                   "Base Stat: {}\n".format(self.name, self._id, self.battle_only, self.base_stat)
 
         return textwrap.indent(text=str, prefix='+ ', predicate=lambda line: True)

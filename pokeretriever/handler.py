@@ -159,22 +159,23 @@ class OutputHandler(BaseHandler):
                 pokemon_objects.append(obj)
 
         elif mode == "ability":
-            pokemon = []
-            for a in json_data:
 
+            for a in json_data:
+                pokemon = []
                 for p in a["pokemon"]:
+
                     pokemon.append(p["pokemon"]["name"])
                 obj = pokedex_object.Ability(a["name"], a["id"], a["generation"]["name"],
                                              a["effect_entries"][0]["effect"],
                                              a["effect_entries"][0]["short_effect"], pokemon)
-            pokemon_objects.append(obj)
+                pokemon_objects.append(obj)
         elif mode == "move":
             for m in json_data:
                 obj = pokedex_object.Move(m["name"], m["id"], m["generation"]["name"],
                                           m["accuracy"], m["pp"], m["power"],
                                           m["type"]["name"], m["damage_class"]["name"],
                                           m["effect_entries"][0]["short_effect"])
-            pokemon_objects.append(obj)
+                pokemon_objects.append(obj)
         return pokemon_objects
 
     async def handle_request(self, req: request.Request):
