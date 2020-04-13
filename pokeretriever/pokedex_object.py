@@ -108,27 +108,27 @@ class Ability(PokedexObject):
 
     def __str__(self):
         width = 80
-        str = ""
+        stri = ""
         if self._id is None:
-            str += "Ability Name: {}\n".format(self.name)
+            stri += "Ability Name: {}\n".format(self.name)
         else:
-            str += "Ability Name: {}\nAbility ID: {}\nGeneration: {}\nEffect: {}\nShort Effect: {}\n" \
+            stri += "Ability Name: {}\nAbility ID: {}\nGeneration: {}\nEffect: {}\nShort Effect: {}\n" \
                    "Pokemons with same ability: {}\n".format(self.name, self._id, self.generation, self.effect,
                                                              self.effect_short, self.pokemon)
-        msg = textwrap.indent(text=str, prefix='+ ', predicate=lambda line: True)
+        msg = textwrap.indent(text=stri, prefix='+ ', predicate=lambda line: True)
         mylist = [textwrap.fill(i, width=width) for i in msg.split('\n')]
         joined = "\n".join(mylist)
         splitted = joined.split("\n")
-        result = '+-' + '-' * (width) + '-+'
+        result = '+-' + '-' * width + '-+'
         for i in splitted:
             if i != "":
                 result += '\n| {0:{1}} |'.format(i, width)
-        return result + '\n+-' + '-' * (width) + '-+'
+        return result + '\n+-' + '-' * width + '-+'
 
 
 class Move(PokedexObject):
     def __init__(self, name, _id=None, generation=None, accuracy=None, pp=None,
-                 power=None, type=None, damage_class=None, effect_short=None, level=None):
+                 power=None, types=None, damage_class=None, effect_short=None, level=None):
         """
         Create a Move object.
         :param name: String
@@ -137,7 +137,7 @@ class Move(PokedexObject):
         :param accuracy: int
         :param pp: int
         :param power: int
-        :param type: String
+        :param types: String
         :param damage_class: String
         :param effect_short: String
         """
@@ -146,31 +146,31 @@ class Move(PokedexObject):
         self.accuracy = accuracy
         self.pp = pp
         self.power = power
-        self.type = type
+        self.type = types
         self.damage_class = damage_class
         self.effect_short = effect_short
         self.level = level
 
     def __str__(self):
-        str = ""
+        stri = ""
         width = 80
         if self.type is None:
-            str += "Move Name: {}\nLevel Acquired: {}\n".format(self.name, self.level)
+            stri += "Move Name: {}\nLevel Acquired: {}\n".format(self.name, self.level)
         else:
-            str += "Move Name: {}\nMove ID: {}\nGeneration: {}\nAccuracy: {}\nPP: {}\nPower: {}\nType: {}\n" \
+            stri += "Move Name: {}\nMove ID: {}\nGeneration: {}\nAccuracy: {}\nPP: {}\nPower: {}\nType: {}\n" \
                    "Damage Class: {}\nEffect: {}\n".format(self.name, self._id, self.generation, self.accuracy,
                                                            self.pp, self.power, self.type, self.damage_class,
                                                            self.effect_short)
 
-        msg = textwrap.indent(text=str, prefix='+ ', predicate=lambda line: True)
+        msg = textwrap.indent(text=stri, prefix='+ ', predicate=lambda line: True)
         mylist = [textwrap.fill(i, width=width) for i in msg.split('\n')]
         joined = "\n".join(mylist)
         splitted = joined.split("\n")
-        result = '+-' + '-' * (width) + '-+'
+        result = '+-' + '-' * width + '-+'
         for i in splitted:
             if i != "":
                 result += '\n| {0:{1}} |'.format(i, width)
-        return result + '\n+-' + '-' * (width) + '-+'
+        return result + '\n+-' + '-' * width + '-+'
 
 
 class Stat(PokedexObject):
@@ -187,11 +187,11 @@ class Stat(PokedexObject):
 
     def __str__(self):
 
-        str = ""
+        stri = ""
         if self.battle_only is None:
-            str += "Stat Name: {}\nBase Stat: {}\n".format(self.name, self.base_stat)
+            stri += "Stat Name: {}\nBase Stat: {}\n".format(self.name, self.base_stat)
         else:
-            str += "Stat Name: {}\nStat ID: {}\nBattle Only: {}\n" \
+            stri += "Stat Name: {}\nStat ID: {}\nBattle Only: {}\n" \
                    "Base Stat: {}\n".format(self.name, self._id, self.battle_only, self.base_stat)
 
-        return textwrap.indent(text=str, prefix='+ ', predicate=lambda line: True)
+        return textwrap.indent(text=stri, prefix='+ ', predicate=lambda line: True)

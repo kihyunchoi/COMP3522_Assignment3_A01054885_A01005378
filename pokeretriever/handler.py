@@ -1,8 +1,5 @@
 import abc
 from pokeretriever import request, aiohttp, pokedex_object
-import io
-import json
-import pickle
 
 
 class BaseHandler(abc.ABC):
@@ -85,7 +82,6 @@ class OutputHandler(BaseHandler):
                 return f"File '{from_file}' could not be found."
 
         json_data = await aiohttp.process_requests(mode, lines)
-        obj = None
         pokemon_objects = []
 
         if mode == "pokemon":
@@ -100,7 +96,6 @@ class OutputHandler(BaseHandler):
                 if req.expanded is True:
                     # get abilities
                     abilities = []
-                    ids = []
                     for a in pokemon["abilities"]:
                         url = a["ability"]["url"].split("/")
                         ab_data = await aiohttp.process_single_request("ability", url[6])
