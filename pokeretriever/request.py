@@ -47,9 +47,9 @@ def setup_request_commandline() -> Request:
     try:
         args = parser.parse_args()
         req = Request()
-        req.mode = args.mode
+        req.mode = args.mode.lower()
         req.input_file = args.inputfile
-        req.input_data = args.inputdata
+        req.input_data = args.inputdata.lower()
         req.expanded = args.expanded
         req.output = args.output
         print(req)
