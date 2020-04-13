@@ -70,7 +70,7 @@ class OutputHandler(BaseHandler):
 
         lines = []
         if req.input_data is not None:
-            lines.append(req.input_data)
+            lines.append(req.input_data.lower())
         elif from_file is not None:
             try:
                 with open(from_file, mode="r") as file:
