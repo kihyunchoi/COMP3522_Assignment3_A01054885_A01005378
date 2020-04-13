@@ -49,7 +49,7 @@ def setup_request_commandline() -> Request:
         req = Request()
         req.mode = args.mode.lower()
         req.input_file = args.inputfile
-        req.input_data = args.inputdata.lower()
+        req.input_data = args.inputdata
         req.expanded = args.expanded
         req.output = args.output
         print(req)
