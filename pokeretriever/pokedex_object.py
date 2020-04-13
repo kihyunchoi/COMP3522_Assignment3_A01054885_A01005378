@@ -33,54 +33,60 @@ class Pokemon(PokedexObject):
         return self._id
 
     def __str__(self):
-        width = 86
+        width = 80
         stats = ""
         for s in self.stats:
             stats += "\n" + s.__str__() + "-" * width
 
         moves = ""
         for m in self.moves:
-            moves += "\n" + m.__str__() + "-" * width
+            moves += "\n" + m.__str__()
 
         abilities = ""
         for a in self.abilities:
-            abilities += "\n" + a.__str__() + "-" * width
+            abilities += "\n" + a.__str__()
 
-
-
-        str = "Pokemon Name: {:>10}\nPokedex ID: {:>10}" \
-              "\nHeight: {:>10} decimetres\nWeight: {:>10} hectograms" \
-              "\nTypes: {}\n".format(self.name, self.get_id(), self.height, self.weight, self.types)
+        stri = '+-' + '-' * width + '-+'
+        stri += '\n| {0:^{1}} |'.format("Pokemon Details", width)
+        stri += '\n+-' + '-' * width + '-+'
+        type_str = ",".join(self.types)
+        poke_str = "\n{:<15} {:<20}".format("Pokemon Name:", self.name)
+        poke_str += "\n{:<15} {:<20}".format("Pokedex ID:", self.get_id())
+        height = str(self.height) + " decimetres"
+        poke_str += "\n{:<15} {:<20}".format("Height:", height)
+        weight = str(self.weight) + " hectograms"
+        poke_str += "\n{:<15} {:<20}".format("Weight:", weight)
+        poke_str += "\n{:<15} {:<20}".format("Types:", type_str)
+        msg = textwrap.indent(text=poke_str, prefix='+ ', predicate=lambda line: True)
+        mylist = [textwrap.fill(i, width=width) for i in msg.split('\n') if i != "+ "]
+        joined = "\n".join(mylist)
+        splitted = joined.split("\n")
+        for i in splitted:
+            stri += '\n| {0:{1}} |'.format(i, width)
 
         # Formatting Stats
-        str += '+-' + '-' * width + '-+'
-        str += '\n| {0:^{1}} |'.format("Stats", width)
-        str += '\n+-' + '-' * width + '-+'
+        stri += '\n+-' + '-' * width + '-+'
+        stri += '\n| {0:^{1}} |'.format("Stats", width)
+        stri += '\n+-' + '-' * width + '-+'
 
         wrapper = textwrap.TextWrapper(width=width)
         mylist = [wrapper.wrap(i) for i in stats.split('\n') if i != '']
         for i in mylist:
-            str += '\n| {0:{1}} |'.format(i[0], width)
+            stri += '\n| {0:{1}} |'.format(i[0], width)
 
-        str += '\n+-' + '-' * (width) + '-+'
+        # str += '\n+-' + '-' * (width) + '-+'
 
         # Formatting Abilities
-        width = 86
-        str += '\n+-' + '-' * width + '-+'
-        str += '\n| {0:^{1}} |'.format("Abilities", width)
-        str += '\n+-' + '-' * width + '-+'
-        mylist = [textwrap.fill(i, width=width) for i in abilities.split('\n')]
-        joined = "\n".join(mylist)
-        splitted = joined.split("\n")
-        for i in splitted:
-            if i != "":
-                str += '\n| {0:{1}} |'.format(i, width)
-        str += '\n+-' + '-' * (width) + '-+'
+        stri += '\n+-' + '-' * width + '-+'
+        stri += '\n| {0:^{1}} |'.format("Abilities", width)
+        stri += abilities
 
         # Formatting Moves
-        str += "\n" + "-" * 30 + "\n\tMoves\n" + "-" * 30 + "\n{}".format(moves)
+        stri += '\n+-' + '-' * width + '-+'
+        stri += '\n| {0:^{1}} |'.format("Moves", width)
+        stri += moves
 
-        return str
+        return stri
 
 
 class Ability(PokedexObject):
@@ -101,6 +107,7 @@ class Ability(PokedexObject):
         self.pokemon = pokemon
 
     def __str__(self):
+        width = 80
         str = ""
         if self._id is None:
             str += "Ability Name: {}\n".format(self.name)
@@ -108,7 +115,15 @@ class Ability(PokedexObject):
             str += "Ability Name: {}\nAbility ID: {}\nGeneration: {}\nEffect: {}\nShort Effect: {}\n" \
                    "Pokemons with same ability: {}\n".format(self.name, self._id, self.generation, self.effect,
                                                              self.effect_short, self.pokemon)
-        return textwrap.indent(text=str, prefix='+ ', predicate=lambda line: True)
+        msg = textwrap.indent(text=str, prefix='+ ', predicate=lambda line: True)
+        mylist = [textwrap.fill(i, width=width) for i in msg.split('\n')]
+        joined = "\n".join(mylist)
+        splitted = joined.split("\n")
+        result = '+-' + '-' * (width) + '-+'
+        for i in splitted:
+            if i != "":
+                result += '\n| {0:{1}} |'.format(i, width)
+        return result + '\n+-' + '-' * (width) + '-+'
 
 
 class Move(PokedexObject):
@@ -138,6 +153,7 @@ class Move(PokedexObject):
 
     def __str__(self):
         str = ""
+        width = 80
         if self.type is None:
             str += "Move Name: {}\nLevel Acquired: {}\n".format(self.name, self.level)
         else:
@@ -145,7 +161,16 @@ class Move(PokedexObject):
                    "Damage Class: {}\nEffect: {}\n".format(self.name, self._id, self.generation, self.accuracy,
                                                            self.pp, self.power, self.type, self.damage_class,
                                                            self.effect_short)
-        return str
+
+        msg = textwrap.indent(text=str, prefix='+ ', predicate=lambda line: True)
+        mylist = [textwrap.fill(i, width=width) for i in msg.split('\n')]
+        joined = "\n".join(mylist)
+        splitted = joined.split("\n")
+        result = '+-' + '-' * (width) + '-+'
+        for i in splitted:
+            if i != "":
+                result += '\n| {0:{1}} |'.format(i, width)
+        return result + '\n+-' + '-' * (width) + '-+'
 
 
 class Stat(PokedexObject):
@@ -161,6 +186,7 @@ class Stat(PokedexObject):
         self.base_stat = base_stat
 
     def __str__(self):
+
         str = ""
         if self.battle_only is None:
             str += "Stat Name: {}\nBase Stat: {}\n".format(self.name, self.base_stat)
